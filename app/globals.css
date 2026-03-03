@@ -1,0 +1,7 @@
+@config "../tailwind.config.ts";
+
+@import "tailwindcss";
+
+body {
+  @apply bg-void text-frost;
+}
