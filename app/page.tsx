@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="min-h-screen flex flex-col bg-void text-frost">
       {/* Hero */}
       <section className="flex-1 flex items-center justify-center px-6 py-24 text-center bg-gradient-to-b from-void to-black/80">
         <motion.div
@@ -29,7 +29,7 @@ export default function Home() {
               Listen Now
             </a>
             <a
-              href="https://www.instagram.com/fiveyearwinterband/" // replace with actual Linktree/bio link if known
+              href="https://www.instagram.com/fiveyearwinterband/"
               target="_blank"
               rel="noopener noreferrer"
               className="border-2 border-blood text-blood hover:bg-blood hover:text-void font-bold py-4 px-10 rounded-full text-xl transition-all duration-300"
@@ -58,12 +58,15 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-xl md:text-2xl leading-relaxed"
           >
-            Five Year Winter is a post-hardcore/metalcore band from Nashville, Tennessee, formed in 2024. Heavily influenced by the raw energy and emotional intensity of the early 2000s metalcore scene, we fuse aggressive guitar riffs with haunting melodies and emotional vocals. Currently tracking our upcoming EP—stay tuned.
+            Five Year Winter is a post-hardcore/metalcore band from Nashville, Tennessee, formed in 2024. 
+            Heavily influenced by the raw energy and emotional intensity of the early 2000s metalcore scene, 
+            we fuse aggressive guitar riffs with haunting melodies and emotional vocals. 
+            Currently tracking our upcoming EP — stay tuned.
           </motion.p>
         </div>
       </section>
 
-      {/* Music Embed */}
+      {/* Music */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <motion.h2
@@ -145,12 +148,17 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 text-center border-t border-blood/20">
-        <p className="text-lg">&copy; {new Date().getFullYear()} Five Year Winter • Nashville, TN</p>
-        <div className="mt-4 flex justify-center gap-8">
-          <a href="https://www.instagram.com/fiveyearwinterband/" className="text-blood hover:text-blood-dark">Instagram</a>
-          <a href="https://open.spotify.com/artist/7fQmxwIBDALIrUmP0XJ8qt" className="text-blood hover:text-blood-dark">Spotify</a>
-          {/* Add YouTube, BandMix email if wanted */}
+      <footer className="py-12 text-center border-t border-blood/20 bg-black/80">
+        <p className="text-lg">
+          &copy; {new Date().getFullYear()} Five Year Winter • Nashville, TN
+        </p>
+        <div className="mt-6 flex justify-center gap-8 text-sm">
+          <a href="https://www.instagram.com/fiveyearwinterband/" className="text-blood hover:text-blood-dark transition-colors">
+            Instagram
+          </a>
+          <a href="https://open.spotify.com/artist/7fQmxwIBDALIrUmP0XJ8qt" className="text-blood hover:text-blood-dark transition-colors">
+            Spotify
+          </a>
         </div>
       </footer>
     </main>
