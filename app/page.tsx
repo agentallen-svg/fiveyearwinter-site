@@ -103,7 +103,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Shows */}
+        {/* Shows */}
       <section className="py-20 px-6 bg-black/50">
         <div className="max-w-4xl mx-auto">
           <motion.h2
@@ -123,14 +123,14 @@ export default function Home() {
             >
               <h3 className="text-2xl font-bold text-blood mb-2">April 23, 2026</h3>
               <p className="text-xl">Cobra Nashville</p>
-              <p className="text-lg mt-2">w/ The Broken View, Devil's Cut, Crooked Souls</p>
+              <p className="text-lg mt-2">w/ The Broken View, Devil&apos;s Cut, Crooked Souls</p>
               <p className="mt-4 text-frost/80">
                 Tickets: <a href="https://www.bandsintown.com/a/7419233-five-year-winter" className="text-blood underline">Buy Tickets</a>
               </p>
             </motion.div>
           </div>
           <p className="text-center mt-12 text-lg">
-            More dates & updates on{' '}
+            More dates &amp; updates on{' '}
             <a href="https://linktr.ee/fiveyearwinterband" className="text-blood hover:underline">
               Linktree
             </a>
