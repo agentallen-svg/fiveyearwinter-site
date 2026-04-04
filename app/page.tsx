@@ -19,22 +19,34 @@ export default function Home() {
           <p className="text-2xl md:text-4xl font-light mb-12">
             Nashville Post-Hardcore
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
             <a
               href="https://open.spotify.com/artist/7fQmxwIBDALIrUmP0XJ8qt"
               target="_blank"
-              rel="noopener noreferrer"
-              className="bg-blood hover:bg-blood-dark text-void font-bold py-4 px-10 rounded-full text-xl transition-all duration-300 transform hover:scale-105"
+              className="bg-blood hover:bg-blood-dark text-void font-bold py-4 px-8 rounded-full text-lg transition-all"
             >
-              Listen Now
+              Spotify
             </a>
             <a
-              href="https://www.instagram.com/fiveyearwinterband/"
+              href="https://music.apple.com/us/artist/five-year-winter/1781776877"
               target="_blank"
-              rel="noopener noreferrer"
-              className="border-2 border-blood text-blood hover:bg-blood hover:text-void font-bold py-4 px-10 rounded-full text-xl transition-all duration-300"
+              className="bg-blood hover:bg-blood-dark text-void font-bold py-4 px-8 rounded-full text-lg transition-all"
             >
-              Tickets & Merch
+              Apple Music
+            </a>
+            <a
+              href="https://fiveyearwinter.printful.me/"
+              target="_blank"
+              className="border-2 border-blood text-blood hover:bg-blood hover:text-void font-bold py-4 px-8 rounded-full text-lg transition-all"
+            >
+              Merch
+            </a>
+            <a
+              href="https://www.bandsintown.com/a/7419233-five-year-winter?came_from=257&utm_medium=web&utm_source=home&utm_campaign=search_bar"
+              target="_blank"
+              className="border-2 border-blood text-blood hover:bg-blood hover:text-void font-bold py-4 px-8 rounded-full text-lg transition-all"
+            >
+              Tickets
             </a>
           </div>
         </motion.div>
@@ -103,45 +115,24 @@ export default function Home() {
             Upcoming Shows
           </motion.h2>
           <div className="space-y-8">
-            {[
-              {
-                date: "March 10, 2026",
-                venue: "The End Nashville",
-                with: "Weeping Wound, Your Original Self, So Calm",
-                tickets: "Link in IG bio",
-              },
-              {
-                date: "March 21, 2026",
-                venue: "Hop Springs",
-                with: "Pale Kaiori, Silent No More, Valor, Hope Consumed (all ages)",
-                tickets: "Link in IG bio",
-              },
-              {
-                date: "April 23, 2026",
-                venue: "Cobra Nashville",
-                with: "The Broken View, Devil's Cut, Crooked Souls",
-                tickets: "Eventbrite / Link in bio",
-              },
-            ].map((show, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.2 }}
-                viewport={{ once: true }}
-                className="bg-void/80 border border-blood/30 p-6 rounded-lg hover:border-blood transition-all"
-              >
-                <h3 className="text-2xl font-bold text-blood mb-2">{show.date}</h3>
-                <p className="text-xl">{show.venue}</p>
-                <p className="text-lg mt-2">w/ {show.with}</p>
-                <p className="mt-4 text-frost/80">Tickets: {show.tickets}</p>
-              </motion.div>
-            ))}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-void/80 border border-blood/30 p-6 rounded-lg hover:border-blood transition-all"
+            >
+              <h3 className="text-2xl font-bold text-blood mb-2">April 23, 2026</h3>
+              <p className="text-xl">Cobra Nashville</p>
+              <p className="text-lg mt-2">w/ The Broken View, Devil's Cut, Crooked Souls</p>
+              <p className="mt-4 text-frost/80">
+                Tickets: <a href="https://www.bandsintown.com/a/7419233-five-year-winter" className="text-blood underline">Buy Tickets</a>
+              </p>
+            </motion.div>
           </div>
           <p className="text-center mt-12 text-lg">
             More dates & updates on{' '}
-            <a href="https://www.instagram.com/fiveyearwinterband/" className="text-blood hover:underline">
-              Instagram
+            <a href="https://linktr.ee/fiveyearwinterband" className="text-blood hover:underline">
+              Linktree
             </a>
           </p>
         </div>
@@ -152,13 +143,14 @@ export default function Home() {
         <p className="text-lg">
           &copy; {new Date().getFullYear()} Five Year Winter • Nashville, TN
         </p>
-        <div className="mt-6 flex justify-center gap-8 text-sm">
-          <a href="https://www.instagram.com/fiveyearwinterband/" className="text-blood hover:text-blood-dark transition-colors">
-            Instagram
-          </a>
-          <a href="https://open.spotify.com/artist/7fQmxwIBDALIrUmP0XJ8qt" className="text-blood hover:text-blood-dark transition-colors">
-            Spotify
-          </a>
+        <div className="mt-6 flex justify-center gap-8 text-sm flex-wrap">
+          <a href="https://www.instagram.com/fiveyearwinterband/" className="text-blood hover:text-blood-dark transition-colors">Instagram</a>
+          <a href="https://linktr.ee/fiveyearwinterband" className="text-blood hover:text-blood-dark transition-colors">Linktree</a>
+          <a href="https://open.spotify.com/artist/7fQmxwIBDALIrUmP0XJ8qt" className="text-blood hover:text-blood-dark transition-colors">Spotify</a>
+          <a href="https://music.apple.com/us/artist/five-year-winter/1781776877" className="text-blood hover:text-blood-dark transition-colors">Apple Music</a>
+          <a href="https://www.tiktok.com/@fiveyearwinterband" className="text-blood hover:text-blood-dark transition-colors">TikTok</a>
+          <a href="https://www.youtube.com/@fiveyearwinterband" className="text-blood hover:text-blood-dark transition-colors">YouTube</a>
+          <a href="https://fiveyearwinter.printful.me/" className="text-blood hover:text-blood-dark transition-colors">Merch</a>
         </div>
       </footer>
     </main>
