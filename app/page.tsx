@@ -78,6 +78,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Meet the Band - with your new photo */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-5xl font-display font-bold text-blood mb-8"
+          >
+            Meet the Band
+          </motion.h2>
+          <motion.img
+            src="/band-photo.jpg"
+            alt="Five Year Winter - Christian, Zach, and Luke"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="mx-auto rounded-2xl shadow-2xl shadow-blood/40 max-w-full h-auto"
+          />
+          <p className="mt-8 text-lg text-frost/90">
+            Christian (guitar, primary songwriter, artwork) • Zach (vocals) • Luke (bass)
+          </p>
+        </div>
+      </section>
+
       {/* Music */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
@@ -103,7 +128,7 @@ export default function Home() {
         </div>
       </section>
 
-        {/* Shows */}
+      {/* Shows */}
       <section className="py-20 px-6 bg-black/50">
         <div className="max-w-4xl mx-auto">
           <motion.h2
@@ -125,7 +150,7 @@ export default function Home() {
               <p className="text-xl">Cobra Nashville</p>
               <p className="text-lg mt-2">w/ The Broken View, Devil&apos;s Cut, Crooked Souls</p>
               <p className="mt-4 text-frost/80">
-                Tickets: <a href="https://www.bandsintown.com/a/7419233-five-year-winter" className="text-blood underline">Buy Tickets</a>
+                Tickets: <a href="https://www.bandsintown.com/a/7419233-five-year-winter?came_from=257&utm_medium=web&utm_source=home&utm_campaign=search_bar" className="text-blood underline">Buy Tickets</a>
               </p>
             </motion.div>
           </div>
