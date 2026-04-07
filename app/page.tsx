@@ -73,12 +73,12 @@ export default function Home() {
             Five Year Winter is a post-hardcore/metalcore band from Nashville, Tennessee, formed in 2024. 
             Heavily influenced by the raw energy and emotional intensity of the early 2000s metalcore scene, 
             we fuse aggressive guitar riffs with haunting melodies and emotional vocals. 
-            Currently tracking our upcoming EP — stay tuned.
+            Recently finished recording our upcoming EP - release is imminent.
           </motion.p>
         </div>
       </section>
 
-      {/* Meet the Band - with your new photo */}
+      {/* Meet the Band */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2
@@ -91,14 +91,14 @@ export default function Home() {
           </motion.h2>
           <motion.img
             src="/band-photo.jpg"
-            alt="Five Year Winter - Christian, Zach, and Luke"
+            alt="Five Year Winter - Zach, Christian, and Luke"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             className="mx-auto rounded-2xl shadow-2xl shadow-blood/40 max-w-full h-auto"
           />
           <p className="mt-8 text-lg text-frost/90">
-            Christian (guitar, primary songwriter, artwork) • Zach (vocals) • Luke (bass)
+            Zach (vocals) • Christian (guitar) • Luke (bass)
           </p>
         </div>
       </section>
