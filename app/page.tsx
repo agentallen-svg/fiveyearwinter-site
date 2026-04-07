@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col bg-void text-frost">
-      {/* Hero with EP artwork influence */}
-      <section className="flex-1 flex items-center justify-center px-6 py-24 text-center bg-gradient-to-b from-void via-black/90 to-black relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/og-image.jpg')] bg-cover bg-center opacity-30 mix-blend-overlay"></div>
+      {/* Hero with stronger EP artwork */}
+      <section className="flex-1 flex items-center justify-center px-6 py-24 text-center bg-gradient-to-b from-void via-black/80 to-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/og-image.jpg')] bg-cover bg-center opacity-50 mix-blend-overlay"></div>
         
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -39,14 +39,14 @@ export default function Home() {
             <a
               href="https://fiveyearwinter.printful.me/"
               target="_blank"
-              className="border-2 border-blood text-blood hover:bg-blood hover:text-void font-bold py-4 px-8 rounded-full text-lg transition-all"
+              className="bg-blood hover:bg-blood-dark text-void font-bold py-4 px-8 rounded-full text-lg transition-all"
             >
               Merch
             </a>
             <a
               href="https://www.bandsintown.com/a/7419233-five-year-winter?came_from=257&utm_medium=web&utm_source=home&utm_campaign=search_bar"
               target="_blank"
-              className="border-2 border-blood text-blood hover:bg-blood hover:text-void font-bold py-4 px-8 rounded-full text-lg transition-all"
+              className="bg-blood hover:bg-blood-dark text-void font-bold py-4 px-8 rounded-full text-lg transition-all"
             >
               Tickets
             </a>
@@ -54,7 +54,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* About - bio only, no header */}
+      {/* About */}
       <section className="py-20 px-6 bg-black/50">
         <div className="max-w-4xl mx-auto text-center">
           <motion.p
@@ -72,24 +72,54 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Meet the Band - photo only, no names or instruments */}
+      {/* Meet the Band with vignette and scroll blindfold animation */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.img
-            src="/band-photo.jpg"
-            alt="Five Year Winter"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="mx-auto rounded-2xl shadow-2xl shadow-blood/40 max-w-full h-auto"
-          />
+            className="text-5xl font-display font-bold text-blood mb-8"
+          >
+            Meet the Band
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="relative mx-auto"
+          >
+            <motion.img
+              src="/band-photo.jpg"
+              alt="Five Year Winter - Zach, Christian, and Luke"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="mx-auto rounded-2xl shadow-2xl shadow-blood/40 max-w-full h-auto"
+            />
+            {/* Blindfold overlay with scroll animation */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="absolute inset-0 bg-black/70 rounded-2xl"
+              style={{
+                maskImage: 'linear-gradient(to bottom, transparent 30%, black 50%, transparent 70%)',
+                WebkitMaskImage: 'linear-gradient(to bottom, transparent 30%, black 50%, transparent 70%)',
+              }}
+            />
+          </motion.div>
+          <p className="mt-8 text-lg text-frost/90">
+            Zach (vocals) • Christian (guitar) • Luke (bass)
+          </p>
         </div>
       </section>
 
-      {/* Music - no header */}
+      {/* Music with raised glow */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="aspect-video w-full max-w-3xl mx-auto rounded-xl overflow-hidden shadow-2xl shadow-blood/30">
+          <div className="aspect-video w-full max-w-3xl mx-auto rounded-xl overflow-hidden shadow-2xl shadow-blood/50 -mt-6">
             <iframe
               style={{ borderRadius: '12px' }}
               src="https://open.spotify.com/embed/artist/7fQmxwIBDALIrUmP0XJ8qt?utm_source=generator"
