@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col bg-void text-frost">
-      {/* Hero with EP artwork influence */}
+       {/* Hero with EP artwork influence */}
       <section className="flex-1 flex items-center justify-center px-6 py-24 text-center bg-gradient-to-b from-void via-black/90 to-black relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/og-image.jpg')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-[url('/og-image.jpg')] bg-cover bg-center opacity-30 mix-blend-overlay"></div>
         
         <motion.div
           initial={{ opacity: 0, y: 50 }}
