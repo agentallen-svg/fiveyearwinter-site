@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: "Five Year Winter",
     images: [
       {
-        url: "https://fiveyearwinter.com/og-image.jpg", // we'll update this with EP art later
+        url: "/og-image.jpg",        // ← your EP artwork
         width: 1200,
         height: 630,
         alt: "Five Year Winter",
