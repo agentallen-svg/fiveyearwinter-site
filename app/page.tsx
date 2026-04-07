@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col bg-void text-frost">
-       {/* Hero with EP artwork influence */}
+      {/* Hero with EP artwork influence */}
       <section className="flex-1 flex items-center justify-center px-6 py-24 text-center bg-gradient-to-b from-void via-black/90 to-black relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/og-image.jpg')] bg-cover bg-center opacity-30 mix-blend-overlay"></div>
         
@@ -18,7 +18,7 @@ export default function Home() {
           <h1 className="text-7xl md:text-9xl font-display font-black tracking-tighter text-blood uppercase mb-4 animate-glitch">
             Five Year Winter
           </h1>
-          <p className="text-2xl md:text-4xl font-light mb-12">
+          <p className="text-3xl md:text-5xl font-light mb-12 text-blood/90">
             A Matter of Conviction
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
@@ -54,17 +54,9 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* About */}
+      {/* About - bio only, no header */}
       <section className="py-20 px-6 bg-black/50">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.h2
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-5xl font-display font-bold text-blood mb-8"
-          >
-            About
-          </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -80,42 +72,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Meet the Band */}
+      {/* Meet the Band - photo only, no names or instruments */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.h2
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-5xl font-display font-bold text-blood mb-8"
-          >
-            Meet the Band
-          </motion.h2>
           <motion.img
             src="/band-photo.jpg"
-            alt="Five Year Winter - Zach, Christian, and Luke"
+            alt="Five Year Winter"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             className="mx-auto rounded-2xl shadow-2xl shadow-blood/40 max-w-full h-auto"
           />
-          <p className="mt-8 text-lg text-frost/90">
-            Zach (vocals) • Christian (guitar) • Luke (bass)
-          </p>
         </div>
       </section>
 
-      {/* Music */}
+      {/* Music - no header */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
-          <motion.h2
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-5xl font-display font-bold text-blood text-center mb-12"
-          >
-            Music
-          </motion.h2>
           <div className="aspect-video w-full max-w-3xl mx-auto rounded-xl overflow-hidden shadow-2xl shadow-blood/30">
             <iframe
               style={{ borderRadius: '12px' }}
@@ -133,14 +106,6 @@ export default function Home() {
       {/* Shows */}
       <section className="py-20 px-6 bg-black/50">
         <div className="max-w-4xl mx-auto">
-          <motion.h2
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-5xl font-display font-bold text-blood text-center mb-12"
-          >
-            Upcoming Shows
-          </motion.h2>
           <div className="space-y-8">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -155,13 +120,21 @@ export default function Home() {
                 Tickets: <a href="https://www.bandsintown.com/a/7419233-five-year-winter?came_from=257&utm_medium=web&utm_source=home&utm_campaign=search_bar" className="text-blood underline">Buy Tickets</a>
               </p>
             </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-void/80 border border-blood/30 p-6 rounded-lg hover:border-blood transition-all"
+            >
+              <h3 className="text-2xl font-bold text-blood mb-2">June 16, 2026</h3>
+              <p className="text-xl">The Cobra</p>
+              <p className="text-lg mt-2">w/ SavingVice, Roderick, Resider, Valor</p>
+              <p className="mt-4 text-frost/80">
+                Tickets: Coming soon
+              </p>
+            </motion.div>
           </div>
-          <p className="text-center mt-12 text-lg">
-            More dates &amp; updates on{' '}
-            <a href="https://linktr.ee/fiveyearwinterband" className="text-blood hover:underline">
-              Linktree
-            </a>
-          </p>
         </div>
       </section>
 
