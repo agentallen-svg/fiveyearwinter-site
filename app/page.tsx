@@ -5,19 +5,21 @@ import { motion } from 'framer-motion';
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col bg-void text-frost">
-      {/* Hero */}
-      <section className="flex-1 flex items-center justify-center px-6 py-24 text-center bg-gradient-to-b from-void to-black/80">
+      {/* Hero with EP artwork influence */}
+      <section className="flex-1 flex items-center justify-center px-6 py-24 text-center bg-gradient-to-b from-void via-black/90 to-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/og-image.jpg')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+        
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
-          className="max-w-5xl"
+          className="max-w-5xl relative z-10"
         >
           <h1 className="text-7xl md:text-9xl font-display font-black tracking-tighter text-blood uppercase mb-4 animate-glitch">
             Five Year Winter
           </h1>
           <p className="text-2xl md:text-4xl font-light mb-12">
-            Nashville Post-Hardcore
+            A Matter of Conviction
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
             <a
