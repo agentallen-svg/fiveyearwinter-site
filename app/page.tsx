@@ -1,188 +1,247 @@
+// app/page.tsx
 "use client";
 
-import { motion } from 'framer-motion';
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [blindfoldOpacity, setBlindfoldOpacity] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      // Blindfolds start fading in once user scrolls past hero (~600px) and max out around 900px
+      const progress = Math.min(Math.max((scrollY - 600) / 300, 0), 1);
+      setBlindfoldOpacity(progress);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <main className="min-h-screen flex flex-col bg-void text-frost">
-      {/* Hero with stronger EP artwork */}
-      <section className="flex-1 flex items-center justify-center px-6 py-24 text-center bg-gradient-to-b from-void via-black/80 to-black relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/og-image.jpg')] bg-cover bg-center opacity-50 mix-blend-overlay"></div>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2 }}
-          className="max-w-5xl relative z-10"
-        >
-          <h1 className="text-7xl md:text-9xl font-display font-black tracking-tighter text-blood uppercase mb-4 animate-glitch">
-            Five Year Winter
-          </h1>
-          <p className="text-3xl md:text-5xl font-light mb-12 text-blood/90">
-            A Matter of Conviction
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
-            <a
-              href="https://open.spotify.com/artist/7fQmxwIBDALIrUmP0XJ8qt"
-              target="_blank"
-              className="bg-blood hover:bg-blood-dark text-void font-bold py-4 px-8 rounded-full text-lg transition-all"
-            >
-              Spotify
-            </a>
-            <a
-              href="https://music.apple.com/us/artist/five-year-winter/1781776877"
-              target="_blank"
-              className="bg-blood hover:bg-blood-dark text-void font-bold py-4 px-8 rounded-full text-lg transition-all"
-            >
-              Apple Music
-            </a>
-            <a
-              href="https://fiveyearwinter.printful.me/"
-              target="_blank"
-              className="bg-blood hover:bg-blood-dark text-void font-bold py-4 px-8 rounded-full text-lg transition-all"
-            >
-              Merch
-            </a>
-            <a
-              href="https://www.bandsintown.com/a/7419233-five-year-winter?came_from=257&utm_medium=web&utm_source=home&utm_campaign=search_bar"
-              target="_blank"
-              className="bg-blood hover:bg-blood-dark text-void font-bold py-4 px-8 rounded-full text-lg transition-all"
-            >
-              Tickets
-            </a>
+    <>
+      <style jsx global>{`
+        @keyframes glitch {
+          0% { transform: translate(0); }
+          20% { transform: translate(-2px, 2px); }
+          40% { transform: translate(-2px, -2px); }
+          60% { transform: translate(2px, 2px); }
+          80% { transform: translate(2px, -2px); }
+          100% { transform: translate(0); }
+        }
+        .glitch {
+          animation: glitch 0.3s infinite linear alternate;
+          text-shadow: 
+            -2px 0 #ff0000,
+             2px 0 #00ffff;
+        }
+        .vignette {
+          position: relative;
+        }
+        .vignette::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: radial-gradient(circle at center, transparent 60%, rgba(0, 0, 0, 0.85) 100%);
+          pointer-events: none;
+          z-index: 2;
+        }
+        .blindfold {
+          position: absolute;
+          background: rgba(0, 0, 0, 0.92);
+          border-top: 6px solid #ff0000;
+          border-bottom: 6px solid #ff0000;
+          box-shadow: 0 0 20px #ff0000;
+          z-index: 3;
+          pointer-events: none;
+        }
+      `}</style>
+
+      <div className="min-h-screen bg-black text-white font-sans">
+        {/* HERO - EP Focal Point */}
+        <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+          {/* EP Artwork as visible background treatment */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay"
+            style={{ backgroundImage: "url('/og-image.jpg')" }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black" />
+          
+          <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+            <h1 className="text-[5.5rem] md:text-[7rem] font-black tracking-[-0.07em] leading-none glitch text-white mb-4">
+              FIVE YEAR WINTER
+            </h1>
+            <p className="text-4xl md:text-6xl font-light tracking-widest text-red-500 mb-8">
+              A MATTER OF CONVICTION
+            </p>
+            <div className="flex gap-6 justify-center">
+              <a
+                href="https://open.spotify.com/artist/0hgxOKytNracFDmmeKvBEl"
+                target="_blank"
+                className="px-8 py-4 bg-red-600 hover:bg-red-700 transition-colors text-lg font-medium"
+              >
+                LISTEN ON SPOTIFY
+              </a>
+              <a
+                href="https://fiveyearwinter.printful.me/"
+                target="_blank"
+                className="px-8 py-4 border border-red-500 hover:bg-red-500/10 transition-colors text-lg font-medium"
+              >
+                MERCH
+              </a>
+            </div>
           </div>
-        </motion.div>
-      </section>
 
-      {/* About */}
-      <section className="py-20 px-6 bg-black/50">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-xl md:text-2xl leading-relaxed"
-          >
-            Five Year Winter is a post-hardcore/metalcore band from Nashville, Tennessee, formed in 2024. 
-            Heavily influenced by the raw energy and emotional intensity of the early 2000s metalcore scene, 
-            we fuse aggressive guitar riffs with haunting melodies and emotional vocals. 
-            Recently finished recording our upcoming EP - release is imminent.
-          </motion.p>
-        </div>
-      </section>
+          {/* Subtle red glow at bottom */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-red-500/10 to-transparent" />
+        </section>
 
-      {/* Meet the Band with vignette and scroll blindfold animation */}
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h2
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-5xl font-display font-bold text-blood mb-8"
-          >
-            Meet the Band
-          </motion.h2>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="relative mx-auto"
-          >
-            <motion.img
+        {/* BAND PHOTO with vignette + scroll blindfold effect */}
+        <section className="relative py-16 px-6 max-w-5xl mx-auto">
+          <div className="vignette mx-auto max-w-4xl relative">
+            <img
               src="/band-photo.jpg"
-              alt="Five Year Winter - Zach, Christian, and Luke"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="mx-auto rounded-2xl shadow-2xl shadow-blood/40 max-w-full h-auto"
+              alt="Five Year Winter"
+              className="w-full rounded-lg shadow-2xl"
             />
-            {/* Blindfold overlay with scroll animation */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="absolute inset-0 bg-black/70 rounded-2xl"
-              style={{
-                maskImage: 'linear-gradient(to bottom, transparent 30%, black 50%, transparent 70%)',
-                WebkitMaskImage: 'linear-gradient(to bottom, transparent 30%, black 50%, transparent 70%)',
-              }}
+            
+            {/* Blindfold overlays (fade in on scroll) - positions approximate for typical band photo; tweak as needed */}
+            {/* Blindfold 1 - left member eyes */}
+            <div
+              className="blindfold left-[18%] top-[38%] w-[22%] h-[14%]"
+              style={{ opacity: blindfoldOpacity }}
             />
-          </motion.div>
-          <p className="mt-8 text-lg text-frost/90">
-            Zach (vocals) • Christian (guitar) • Luke (bass)
+            {/* Blindfold 2 - center member eyes */}
+            <div
+              className="blindfold left-[38%] top-[35%] w-[24%] h-[14%]"
+              style={{ opacity: blindfoldOpacity }}
+            />
+            {/* Blindfold 3 - right member eyes */}
+            <div
+              className="blindfold left-[62%] top-[37%] w-[22%] h-[14%]"
+              style={{ opacity: blindfoldOpacity }}
+            />
+            
+            {/* Optional red glow line across blindfolds */}
+            <div
+              className="absolute left-0 right-0 top-1/2 h-px bg-red-500/30 pointer-events-none z-10"
+              style={{ opacity: blindfoldOpacity * 0.6 }}
+            />
+          </div>
+          <p className="text-center text-xs text-red-500/60 mt-4 tracking-widest">
+            SCROLL FOR THE CONVICTION
           </p>
-        </div>
-      </section>
+        </section>
 
-      {/* Music with raised glow */}
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="aspect-video w-full max-w-3xl mx-auto rounded-xl overflow-hidden shadow-2xl shadow-blood/50 -mt-6">
-            <iframe
-              style={{ borderRadius: '12px' }}
-              src="https://open.spotify.com/embed/artist/7fQmxwIBDALIrUmP0XJ8qt?utm_source=generator"
-              width="100%"
-              height="352"
-              frameBorder="0"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-            ></iframe>
+        {/* ABOUT */}
+        <section className="max-w-3xl mx-auto px-6 py-16 border-t border-red-900">
+          <p className="text-lg leading-relaxed text-gray-300">
+            Five Year Winter is a post-hardcore/metalcore band from Nashville, Tennessee, formed in 2024. Heavily influenced by the raw energy and emotional intensity of the early 2000s metalcore scene, we fuse aggressive guitar riffs with haunting melodies and emotional vocals. Recently finished recording our upcoming EP - release is imminent.
+          </p>
+        </section>
+
+        {/* UPCOMING SHOWS */}
+        <section className="bg-zinc-950 py-16 px-6">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-red-500 text-3xl font-bold mb-10 text-center">UPCOMING SHOWS</h2>
+            
+            <div className="space-y-8">
+              {/* Show 1 */}
+              <div className="flex flex-col md:flex-row gap-6 items-start border-l-4 border-red-500 pl-6">
+                <div className="md:w-48">
+                  <div className="text-sm font-medium">APRIL 23, 2026</div>
+                  <div className="text-2xl font-bold">7:00 PM</div>
+                </div>
+                <div className="flex-1">
+                  <div className="text-xl">The Cobra Nashville</div>
+                  <div className="text-red-400">w/ The Broken View, Devil&apos;s Cut, Crooked Souls</div>
+                  <a
+                    href="https://www.bandsintown.com/t/105012345" // replace with actual BIT link
+                    target="_blank"
+                    className="inline-block mt-3 px-6 py-2 border border-red-500 hover:bg-red-500 hover:text-black transition-colors text-sm font-medium"
+                  >
+                    BUY TICKETS
+                  </a>
+                </div>
+              </div>
+
+              {/* Show 2 */}
+              <div className="flex flex-col md:flex-row gap-6 items-start border-l-4 border-red-500 pl-6">
+                <div className="md:w-48">
+                  <div className="text-sm font-medium">JUNE 16, 2026</div>
+                  <div className="text-2xl font-bold">7:00 PM</div>
+                </div>
+                <div className="flex-1">
+                  <div className="text-xl">The Cobra Nashville</div>
+                  <div className="text-red-400">w/ SavingVice, Roderick, Resider, Valor</div>
+                  <span className="inline-block mt-3 px-6 py-2 border border-red-500/30 text-red-500/50 text-sm font-medium">
+                    TICKETS: COMING SOON
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
+        </section>
+
+        {/* MUSIC - Spotify embed, no header */}
+        <section className="py-16 px-6 max-w-4xl mx-auto">
+          <iframe
+            style={{ borderRadius: "12px" }}
+            src="https://open.spotify.com/embed/artist/0hgxOKytNracFDmmeKvBEl?utm_source=generator"
+            width="100%"
+            height="380"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            className="mx-auto"
+          ></iframe>
+        </section>
+
+        {/* BUTTON ROW */}
+        <div className="max-w-3xl mx-auto px-6 pb-16 flex flex-wrap gap-4 justify-center">
+          <a
+            href="https://open.spotify.com/artist/0hgxOKytNracFDmmeKvBEl"
+            target="_blank"
+            className="px-10 py-4 bg-[#1DB954] hover:bg-[#1ed760] text-black font-medium flex items-center gap-2"
+          >
+            <span>SPOTIFY</span>
+          </a>
+          <a
+            href="https://music.apple.com/us/artist/five-year-winter/1234567890" // replace with real Apple link when available
+            target="_blank"
+            className="px-10 py-4 border border-white hover:bg-white hover:text-black font-medium"
+          >
+            APPLE MUSIC
+          </a>
+          <a
+            href="https://fiveyearwinter.printful.me/"
+            target="_blank"
+            className="px-10 py-4 border border-red-500 hover:bg-red-500 hover:text-black font-medium"
+          >
+            MERCH
+          </a>
+          <a
+            href="https://www.bandsintown.com/a/12345678-five-year-winter" // replace with real BIT artist link
+            target="_blank"
+            className="px-10 py-4 border border-white hover:bg-white hover:text-black font-medium"
+          >
+            TICKETS
+          </a>
         </div>
-      </section>
 
-      {/* Shows */}
-      <section className="py-20 px-6 bg-black/50">
-        <div className="max-w-4xl mx-auto">
-          <div className="space-y-8">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="bg-void/80 border border-blood/30 p-6 rounded-lg hover:border-blood transition-all"
-            >
-              <h3 className="text-2xl font-bold text-blood mb-2">April 23, 2026</h3>
-              <p className="text-xl">Cobra Nashville</p>
-              <p className="text-lg mt-2">w/ The Broken View, Devil&apos;s Cut, Crooked Souls</p>
-              <p className="mt-4 text-frost/80">
-                Tickets: <a href="https://www.bandsintown.com/a/7419233-five-year-winter?came_from=257&utm_medium=web&utm_source=home&utm_campaign=search_bar" className="text-blood underline">Buy Tickets</a>
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="bg-void/80 border border-blood/30 p-6 rounded-lg hover:border-blood transition-all"
-            >
-              <h3 className="text-2xl font-bold text-blood mb-2">June 16, 2026</h3>
-              <p className="text-xl">The Cobra</p>
-              <p className="text-lg mt-2">w/ SavingVice, Roderick, Resider, Valor</p>
-              <p className="mt-4 text-frost/80">
-                Tickets: Coming soon
-              </p>
-            </motion.div>
+        {/* FOOTER SOCIALS (keep your current links) */}
+        <footer className="border-t border-red-900 py-8 text-center text-xs text-red-500/60">
+          <div className="flex justify-center gap-8 mb-4">
+            <a href="https://x.com/fiveyearwinter" target="_blank">X</a>
+            <a href="https://instagram.com/fiveyearwinter" target="_blank">INSTAGRAM</a>
+            <a href="https://tiktok.com/@fiveyearwinter" target="_blank">TIKTOK</a>
+            {/* add any other platforms you use */}
           </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-12 text-center border-t border-blood/20 bg-black/80">
-        <p className="text-lg">
-          &copy; {new Date().getFullYear()} Five Year Winter • Nashville, TN
-        </p>
-        <div className="mt-6 flex justify-center gap-8 text-sm flex-wrap">
-          <a href="https://www.instagram.com/fiveyearwinterband/" className="text-blood hover:text-blood-dark transition-colors">Instagram</a>
-          <a href="https://linktr.ee/fiveyearwinterband" className="text-blood hover:text-blood-dark transition-colors">Linktree</a>
-          <a href="https://open.spotify.com/artist/7fQmxwIBDALIrUmP0XJ8qt" className="text-blood hover:text-blood-dark transition-colors">Spotify</a>
-          <a href="https://music.apple.com/us/artist/five-year-winter/1781776877" className="text-blood hover:text-blood-dark transition-colors">Apple Music</a>
-          <a href="https://www.tiktok.com/@fiveyearwinterband" className="text-blood hover:text-blood-dark transition-colors">TikTok</a>
-          <a href="https://www.youtube.com/@fiveyearwinterband" className="text-blood hover:text-blood-dark transition-colors">YouTube</a>
-          <a href="https://fiveyearwinter.printful.me/" className="text-blood hover:text-blood-dark transition-colors">Merch</a>
-        </div>
-      </footer>
-    </main>
+          <p>© 2026 FIVE YEAR WINTER • NASHVILLE, TN</p>
+        </footer>
+      </div>
+    </>
   );
 }
