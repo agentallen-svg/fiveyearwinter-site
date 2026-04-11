@@ -11,7 +11,7 @@ export default function Home() {
         {/* Background: album art with ink overlay */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/og-image.jpg')" }}
+          style={{ backgroundImage: "url('/5YW_website_back.png')" }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#1a1814]/95" />
 
