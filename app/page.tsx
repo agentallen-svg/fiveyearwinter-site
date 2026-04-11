@@ -294,7 +294,7 @@ export default function Home() {
               </a>
             ))}
           </div>
-          <p className="mt-8 text-[10px] uppercase tracking-[0.3em] text-stone/20">
+          <p className="mt-8 text-[10px] uppercase tracking-[0.3em] text-stone/80">
             &copy; {new Date().getFullYear()} Five Year Winter • Nashville, TN
           </p>
         </div>
