@@ -34,7 +34,7 @@ export default function Home() {
             initial={{ opacity: 0, letterSpacing: '0.4em' }}
             animate={{ opacity: 1, letterSpacing: '0.25em' }}
             transition={{ delay: 0.4, duration: 1 }}
-            className="text-xs uppercase tracking-[0.25em] text-stone mb-6 font-body"
+            className="text-xs uppercase tracking-[0.25em] text-linen/80 mb-6 font-body"
           >
             Debut EP — Out May 9th
           </motion.p>
@@ -43,11 +43,11 @@ export default function Home() {
             Five Year<br />Winter
           </h1>
 
-          <p className="font-display text-2xl md:text-3xl text-stone/90 tracking-widest uppercase mb-2 mt-6">
+          <p className="font-display text-2xl md:text-3xl text-linen/90 tracking-widest uppercase mb-2 mt-6">
             A Matter of Conviction
           </p>
 
-          <p className="text-sm text-stone/60 tracking-widest uppercase mb-12">
+          <p className="text-sm text-linen/70 tracking-widest uppercase mb-12">
             Nashville Post-Hardcore
           </p>
 
@@ -58,6 +58,7 @@ export default function Home() {
               { label: 'Apple Music', href: 'https://music.apple.com/us/artist/five-year-winter/1781776877' },
               { label: 'Merch', href: 'https://fiveyearwinter.printful.me/' },
               { label: 'Tickets', href: 'https://www.bandsintown.com/a/7419233-five-year-winter?came_from=257&utm_medium=web&utm_source=home&utm_campaign=search_bar' },
+              { label: 'Booking', href: 'mailto:fiveyearwinterband@gmail.com' },
             ].map((btn) => (
               <a
                 key={btn.label}
@@ -152,7 +153,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-xs uppercase tracking-[0.3em] text-stone/50 text-center mb-8"
+            className="text-xs uppercase tracking-[0.3em] text-stone/80 text-center mb-8"
           >
             Music
           </motion.p>
@@ -176,7 +177,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-xs uppercase tracking-[0.3em] text-stone/50 mb-12"
+            className="text-xs uppercase tracking-[0.3em] text-stone/80 mb-12"
           >
             The Band
           </motion.p>
@@ -200,7 +201,7 @@ export default function Home() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="mt-8 text-sm uppercase tracking-[0.2em] text-stone/60"
+            className="mt-8 text-sm uppercase tracking-[0.2em] text-stone/80"
           >
             Zach — Vocals&nbsp;&nbsp;•&nbsp;&nbsp;Christian — Guitar&nbsp;&nbsp;•&nbsp;&nbsp;Luke — Bass
           </motion.p>
@@ -214,7 +215,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-xs uppercase tracking-[0.3em] text-stone/50 text-center mb-12"
+            className="text-xs uppercase tracking-[0.3em] text-stone/80 text-center mb-12"
           >
             Upcoming Shows
           </motion.p>
@@ -272,7 +273,7 @@ export default function Home() {
           <p className="font-display text-lg text-linen/40 tracking-widest uppercase mb-6">
             Five Year Winter
           </p>
-          <div className="flex flex-wrap justify-center gap-6 text-xs uppercase tracking-widest text-stone/40">
+          <div className="flex flex-wrap justify-center gap-6 text-xs uppercase tracking-widest text-stone/70">
             {[
               { label: 'Merch', href: 'https://fiveyearwinter.printful.me/' },
               { label: 'Instagram', href: 'https://www.instagram.com/fiveyearwinterband/' },
@@ -280,6 +281,7 @@ export default function Home() {
               { label: 'YouTube', href: 'https://www.youtube.com/@fiveyearwinterband' },
               { label: 'Apple Music', href: 'https://music.apple.com/us/artist/five-year-winter/1781776877' },
               { label: 'Spotify', href: 'https://open.spotify.com/artist/7fQmxwIBDALIrUmP0XJ8qt' },
+              { label: 'Tour Dates', href: 'https://www.bandsintown.com/a/7419233?came_from=206' },
             ].map((link) => (
               <a
                 key={link.label}
