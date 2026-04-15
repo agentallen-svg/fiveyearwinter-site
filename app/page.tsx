@@ -182,19 +182,22 @@ export default function Home() {
             The Band
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.97 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            className="mx-auto max-w-2xl"
-          >
+          <div className="relative mx-auto max-w-2xl">
             <img
-              src="/band-photo-blindfold.jpg"
+              src="/3YWwebcompressed.png"
               alt="Five Year Winter — Zach, Christian, and Luke"
               className="w-full h-auto rounded-sm shadow-2xl"
             />
-          </motion.div>
+            <motion.img
+              src="/3YWblindwebcompressed.png"
+              alt="Five Year Winter — blindfold"
+              className="absolute inset-0 w-full h-auto rounded-sm shadow-2xl"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+            />
+          </div>
 
           <motion.p
             initial={{ opacity: 0 }}
