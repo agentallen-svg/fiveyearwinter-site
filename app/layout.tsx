@@ -17,6 +17,9 @@ const garamond = EB_Garamond({
 export const metadata: Metadata = {
   title: "Five Year Winter | A Matter of Conviction",
   description: "Nashville post-hardcore/metalcore. Debut EP out May 9th.",
+  alternates: {
+    canonical: "https://www.fiveyearwinter.com",
+  },
   openGraph: {
     title: "Five Year Winter | A Matter of Conviction",
     description: "Nashville post-hardcore/metalcore. Debut EP out May 9th.",
@@ -41,6 +44,36 @@ export const metadata: Metadata = {
   },
 };
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "Five Year Winter",
+  "genre": ["Post-Hardcore", "Metalcore"],
+  "foundingLocation": {
+    "@type": "Place",
+    "name": "Nashville, Tennessee"
+  },
+  "url": "https://www.fiveyearwinter.com",
+  "sameAs": [
+    "https://open.spotify.com/artist/7fQmxwIBDALIrUmP0XJ8qt",
+    "https://music.apple.com/us/artist/five-year-winter/1781776877",
+    "https://www.instagram.com/fiveyearwinterband/",
+    "https://www.tiktok.com/@fiveyearwinterband",
+    "https://www.youtube.com/@fiveyearwinterband"
+  ],
+  "album": {
+    "@type": "MusicAlbum",
+    "name": "A Matter of Conviction",
+    "albumReleaseType": "EP",
+    "datePublished": "2026-05-09",
+    "numTracks": 5,
+    "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Five Year Winter"
+    }
+  }
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -48,6 +81,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
       <body className={`${playfair.variable} ${garamond.variable} antialiased`}>
         {children}
       </body>
