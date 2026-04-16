@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.fiveyearwinter.com",
   },
+  verification: {
+    google: "yvgiaj43iLCxuo4PBJ-r-jBtWcTWTKHVwgwqacrKrrU",
+  },
   openGraph: {
     title: "Five Year Winter | A Matter of Conviction",
     description: "Nashville post-hardcore/metalcore. Debut EP out May 9th.",
