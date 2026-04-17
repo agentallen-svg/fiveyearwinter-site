@@ -26,13 +26,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Five Year Winter | A Matter of Conviction",
     description: "Nashville post-hardcore/metalcore. Debut EP out May 9th.",
-    url: "https://fiveyearwinter.com",
+    url: "https://www.fiveyearwinter.com",
     siteName: "Five Year Winter",
     images: [
       {
-        url: "https://fiveyearwinter.com/og-image.jpg",
+        url: "https://www.fiveyearwinter.com/og-image.jpg",
         width: 1200,
-        height: 630,
+        height: 1200,
         alt: "Five Year Winter — A Matter of Conviction",
       },
     ],
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Five Year Winter | A Matter of Conviction",
     description: "Nashville post-hardcore/metalcore. Debut EP out May 9th.",
-    images: ["https://fiveyearwinter.com/og-image.jpg"],
+    images: ["https://www.fiveyearwinter.com/og-image.jpg"],
   },
 };
 
