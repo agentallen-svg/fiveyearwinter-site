@@ -226,15 +226,33 @@ export default function Home() {
           <div className="space-y-px">
             {[
               {
-                date: 'April 23, 2026',
-                venue: 'Cobra Nashville',
-                support: 'The Broken View, Devil\'s Cut, Crooked Souls',
-                tickets: 'https://www.bandsintown.com/a/7419233-five-year-winter?came_from=257&utm_medium=web&utm_source=home&utm_campaign=search_bar',
+                date: 'May 22, 2026',
+                venue: 'The Underdog',
+                support: null,
+                tickets: null,
+              },
+              {
+                date: 'May 23, 2026',
+                venue: 'The Mockingbird Theater',
+                support: null,
+                tickets: null,
               },
               {
                 date: 'June 16, 2026',
-                venue: 'Cobra Nashville',
+                venue: 'Cobra',
                 support: 'SavingVice, Roderick, Resider, Valor',
+                tickets: null,
+              },
+              {
+                date: 'July 18, 2026',
+                venue: 'The End',
+                support: null,
+                tickets: null,
+              },
+              {
+                date: 'August 29, 2026',
+                venue: 'The Boneyard Skatepark',
+                support: null,
                 tickets: null,
               },
             ].map((show, i) => (
@@ -249,7 +267,7 @@ export default function Home() {
                 <div>
                   <p className="font-display text-xl text-linen tracking-wide">{show.date}</p>
                   <p className="text-stone/70 text-sm mt-1 uppercase tracking-widest">{show.venue}</p>
-                  <p className="text-stone/50 text-xs mt-1">w/ {show.support}</p>
+                  {show.support && <p className="text-stone/50 text-xs mt-1">w/ {show.support}</p>}
                 </div>
                 {show.tickets ? (
                   <a
