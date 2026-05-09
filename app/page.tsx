@@ -139,16 +139,16 @@ export default function Home() {
                 Five Year Winter is a post-hardcore/metalcore band from Nashville, Tennessee, formed in 2024.
                 Heavily influenced by the raw energy and emotional intensity of the early 2000s metalcore scene,
                 we fuse aggressive guitar riffs with haunting melodies and emotional vocals.
-                Debut EP <em>A Matter of Conviction</em> drops May 9th.
+                Debut EP <em>A Matter of Conviction</em> is out now on all major streaming platforms.
               </p>
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="https://distrokid.com/hyperfollow/fiveyearwinter1/a-matter-of-conviction?ref=release&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnK80nfJggv5513tt2VrvEg2tYi84tevVdvQm1geWKSJnzmj_Qqty2ECrT21w_aem_o45u_KaZLe0806bjVSsYnA"
+                  href="https://open.spotify.com/album/3FMd3kjNWwuowvHtjL1Mdb?si=vwguLMwzTiibM3DVmw7dCg"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="border border-stone/40 text-stone hover:border-linen hover:text-linen px-6 py-2 text-xs uppercase tracking-widest transition-all duration-300"
                 >
-                  Pre-Save Now
+                  Spotify
                 </a>
                 <a
                   href="https://music.apple.com/us/artist/five-year-winter/1781776877"
@@ -177,7 +177,7 @@ export default function Home() {
           </motion.p>
           <div className="rounded-sm overflow-hidden shadow-2xl">
             <iframe
-              src="https://open.spotify.com/embed/artist/7fQmxwIBDALIrUmP0XJ8qt?utm_source=generator&theme=0"
+              src="https://open.spotify.com/embed/album/3FMd3kjNWwuowvHtjL1Mdb?utm_source=generator&theme=0"
               width="100%"
               height="352"
               frameBorder="0"
