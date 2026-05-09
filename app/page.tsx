@@ -36,7 +36,7 @@ export default function Home() {
             transition={{ delay: 0.4, duration: 1 }}
             className="text-xs uppercase tracking-[0.25em] text-linen/80 mb-6 font-body"
           >
-            Debut EP — Out May 9th
+            Debut EP — Out Now on All Major Streaming Platforms!
           </motion.p>
 
           <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tight text-linen leading-none mb-4">
