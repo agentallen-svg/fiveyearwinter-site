@@ -51,7 +51,7 @@ export default function Home() {
             <motion.p
               animate={{ scale: [1, 1.06, 1] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="text-sm uppercase tracking-[0.25em] text-linen/90 font-body whitespace-nowrap"
+              className="text-sm uppercase tracking-[0.25em] text-linen/90 font-body text-center sm:whitespace-nowrap"
             >
               Debut EP — Out Now on All Major Streaming Platforms!
             </motion.p>
