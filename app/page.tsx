@@ -30,14 +30,32 @@ export default function Home() {
           className="relative z-10 text-center px-6 max-w-4xl mx-auto"
         >
           {/* EP badge */}
-          <motion.p
-            initial={{ opacity: 0, letterSpacing: '0.4em' }}
-            animate={{ opacity: 1, letterSpacing: '0.25em' }}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 1 }}
-            className="text-xs uppercase tracking-[0.25em] text-linen/80 mb-6 font-body"
+            className="relative inline-flex items-center justify-center mb-6 px-5 py-2"
           >
-            Debut EP — Out Now on All Major Streaming Platforms!
-          </motion.p>
+            {/* Dissipating ripple rings */}
+            <motion.span
+              className="absolute inset-0 border border-linen/50 rounded-sm pointer-events-none"
+              animate={{ scale: [1, 2.4], opacity: [0.6, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
+            />
+            <motion.span
+              className="absolute inset-0 border border-linen/30 rounded-sm pointer-events-none"
+              animate={{ scale: [1, 2.4], opacity: [0.4, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeOut", delay: 0.75 }}
+            />
+            {/* Badge text with pulse */}
+            <motion.p
+              animate={{ scale: [1, 1.06, 1] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="text-sm uppercase tracking-[0.25em] text-linen/90 font-body whitespace-nowrap"
+            >
+              Debut EP — Out Now on All Major Streaming Platforms!
+            </motion.p>
+          </motion.div>
 
           <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tight text-linen leading-none mb-4">
             Five Year<br />Winter
