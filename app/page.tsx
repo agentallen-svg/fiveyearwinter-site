@@ -117,11 +117,13 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <img
-                src="/og-image.jpg"
-                alt="A Matter of Conviction EP"
+              <video
+                src="/album-cover-animated.webm"
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="w-full shadow-2xl rounded-sm"
-                style={{ filter: 'contrast(1.05)' }}
               />
             </motion.div>
             <motion.div
