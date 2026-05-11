@@ -118,7 +118,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <video
-                src="/album-cover-animated.webm"
+                src="/website_37.webm"
                 autoPlay
                 loop
                 muted
