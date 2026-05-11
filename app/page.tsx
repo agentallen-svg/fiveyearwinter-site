@@ -81,8 +81,7 @@ export default function Home() {
               <a
                 key={btn.label}
                 href={btn.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...(!btn.href.startsWith('mailto:') && { target: '_blank', rel: 'noopener noreferrer' })}
                 className="border border-linen/40 text-linen hover:bg-linen hover:text-ink px-8 py-3 text-sm uppercase tracking-widest transition-all duration-300 font-body"
               >
                 {btn.label}
