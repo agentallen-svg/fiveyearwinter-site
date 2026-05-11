@@ -1,8 +1,18 @@
 "use client";
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function Home() {
+  const [bookingCopied, setBookingCopied] = useState(false);
+
+  function copyBookingEmail() {
+    navigator.clipboard.writeText('fiveyearwinterband@gmail.com').then(() => {
+      setBookingCopied(true);
+      setTimeout(() => setBookingCopied(false), 2000);
+    });
+  }
+
   return (
     <main className="min-h-screen flex flex-col bg-ash text-charcoal font-body">
 
@@ -76,17 +86,23 @@ export default function Home() {
               { label: 'Apple Music', href: 'https://music.apple.com/us/artist/five-year-winter/1781776877' },
               { label: 'Merch', href: 'https://fiveyearwinter.printful.me/' },
               { label: 'Tickets', href: 'https://www.bandsintown.com/a/7419233-five-year-winter?came_from=257&utm_medium=web&utm_source=home&utm_campaign=search_bar' },
-              { label: 'Booking', href: 'mailto:fiveyearwinterband@gmail.com' },
             ].map((btn) => (
               <a
                 key={btn.label}
                 href={btn.href}
-                {...(!btn.href.startsWith('mailto:') && { target: '_blank', rel: 'noopener noreferrer' })}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="border border-linen/40 text-linen hover:bg-linen hover:text-ink px-8 py-3 text-sm uppercase tracking-widest transition-all duration-300 font-body"
               >
                 {btn.label}
               </a>
             ))}
+            <button
+              onClick={copyBookingEmail}
+              className="border border-linen/40 text-linen hover:bg-linen hover:text-ink px-8 py-3 text-sm uppercase tracking-widest transition-all duration-300 font-body"
+            >
+              {bookingCopied ? 'Copied!' : 'Booking'}
+            </button>
           </div>
         </motion.div>
 
