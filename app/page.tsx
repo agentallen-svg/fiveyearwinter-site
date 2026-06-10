@@ -46,19 +46,18 @@ export default function Home() {
             transition={{ delay: 0.4, duration: 1 }}
             className="relative inline-flex items-center justify-center mb-6 px-5 py-2"
           >
-            {/* Sirius glow — white-hot pulse that tips into blue at peak */}
+            {/* Sirius glow — slow breathing scale + white-hot blue-tipped color, all in sync */}
             <motion.p
               animate={{
-                color: ['#e8e4dc', '#ffffff', '#ddeeff', '#ffffff', '#e8e4dc'],
+                scale: [1, 1.07, 1],
+                color: ['#e8e4dc', '#ddeeff', '#e8e4dc'],
                 textShadow: [
                   '0 0 0px rgba(255,255,255,0)',
-                  '0 0 6px rgba(255,255,255,0.5), 0 0 18px rgba(255,255,255,0.2)',
-                  '0 0 4px rgba(255,255,255,1), 0 0 10px rgba(210,230,255,0.95), 0 0 24px rgba(170,205,255,0.7), 0 0 50px rgba(130,175,255,0.35)',
-                  '0 0 6px rgba(255,255,255,0.5), 0 0 18px rgba(255,255,255,0.2)',
+                  '0 0 4px rgba(255,255,255,1), 0 0 12px rgba(210,230,255,0.9), 0 0 28px rgba(170,205,255,0.6), 0 0 55px rgba(130,175,255,0.25)',
                   '0 0 0px rgba(255,255,255,0)',
                 ],
               }}
-              transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
               className="text-sm uppercase tracking-[0.25em] font-body text-center sm:whitespace-nowrap relative z-10"
             >
               Debut EP — Out Now on All Major Streaming Platforms!
