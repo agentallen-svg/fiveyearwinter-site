@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0a0908;
+  --color-ash: #1a1814;
+  --color-charcoal: #2c2a26;
+  --color-stone: #8c8880;
+  --color-linen: #e8e4dc;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "EB Garamond", Georgia, serif;
+}
+
+body {
+  background-color: #0a0908;
+  color: #8c8880;
+}
