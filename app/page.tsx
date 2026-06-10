@@ -46,43 +46,20 @@ export default function Home() {
             transition={{ delay: 0.4, duration: 1 }}
             className="relative inline-flex items-center justify-center mb-6 px-5 py-2"
           >
-            {/* Vapor exhale — expanding halo waves that radiate from the text outline on each pulse */}
-            {[0, 0.35, 0.65].map((waveDelay, i) => (
-              <motion.span
-                key={i}
-                className="absolute pointer-events-none"
-                style={{
-                  inset: 0,
-                  borderRadius: 4,
-                  filter: 'blur(10px)',
-                  background: 'radial-gradient(ellipse at center, transparent 30%, rgba(200, 225, 235, 0.55) 65%, transparent 100%)',
-                }}
-                animate={{
-                  scale:   [1,    1,    1.18,  1.55 ],
-                  opacity: [0,    0,    0.7,   0    ],
-                }}
-                transition={{
-                  duration: 3,
-                  times: [0, 0.44, 0.62, 1],
-                  repeat: Infinity,
-                  ease: 'easeOut',
-                  delay: 1.4 + waveDelay,
-                }}
-              />
-            ))}
-
-            {/* Badge text — dims to bright pulse with glow, vapor syncs to peak */}
+            {/* Sirius glow — white-hot pulse that tips into blue at peak */}
             <motion.p
               animate={{
-                opacity: [0.45, 1, 0.45],
+                color: ['#e8e4dc', '#ffffff', '#ddeeff', '#ffffff', '#e8e4dc'],
                 textShadow: [
-                  '0 0 0px rgba(240,235,225,0)',
-                  '0 0 12px rgba(240,235,225,0.5), 0 0 28px rgba(240,235,225,0.2)',
-                  '0 0 0px rgba(240,235,225,0)',
+                  '0 0 0px rgba(255,255,255,0)',
+                  '0 0 6px rgba(255,255,255,0.5), 0 0 18px rgba(255,255,255,0.2)',
+                  '0 0 4px rgba(255,255,255,1), 0 0 10px rgba(210,230,255,0.95), 0 0 24px rgba(170,205,255,0.7), 0 0 50px rgba(130,175,255,0.35)',
+                  '0 0 6px rgba(255,255,255,0.5), 0 0 18px rgba(255,255,255,0.2)',
+                  '0 0 0px rgba(255,255,255,0)',
                 ],
               }}
               transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-              className="text-sm uppercase tracking-[0.25em] text-linen font-body text-center sm:whitespace-nowrap relative z-10"
+              className="text-sm uppercase tracking-[0.25em] font-body text-center sm:whitespace-nowrap relative z-10"
             >
               Debut EP — Out Now on All Major Streaming Platforms!
             </motion.p>
