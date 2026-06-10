@@ -50,7 +50,7 @@ export default function Home() {
             <motion.p
               animate={{
                 scale: [1, 1.07, 1],
-                color: ['#e8e4dc', '#ddeeff', '#e8e4dc'],
+                color: ['#7a7670', '#ddeeff', '#7a7670'],
                 textShadow: [
                   '0 0 0px rgba(255,255,255,0)',
                   '0 0 4px rgba(255,255,255,1), 0 0 12px rgba(210,230,255,0.9), 0 0 28px rgba(170,205,255,0.6), 0 0 55px rgba(130,175,255,0.25)',
