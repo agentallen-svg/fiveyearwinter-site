@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   icons: {
     apple: "/apple-touch-icon.png",
   },
+  appleWebApp: {
+    title: "5YW",
+  },
   title: "Five Year Winter | A Matter of Conviction",
   description: "Five Year Winter is a Nashville post-hardcore band. Debut EP 'A Matter of Conviction' — five tracks, out now on Spotify, Apple Music, and all major platforms.",
   alternates: {
