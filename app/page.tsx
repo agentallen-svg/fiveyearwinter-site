@@ -83,11 +83,12 @@ export default function Home() {
               { label: 'Apple Music', href: 'https://music.apple.com/us/artist/five-year-winter/1781776877' },
               { label: 'Merch', href: 'https://fiveyearwinter.printful.me/' },
               { label: 'Tickets', href: 'https://www.bandsintown.com/a/7419233-five-year-winter?came_from=257&utm_medium=web&utm_source=home&utm_campaign=search_bar' },
+              { label: 'EPK', href: '/epk' },
             ].map((btn) => (
               <a
                 key={btn.label}
                 href={btn.href}
-                {...(!btn.href.startsWith('mailto:') && { target: '_blank', rel: 'noopener noreferrer' })}
+                {...(!btn.href.startsWith('mailto:') && !btn.href.startsWith('/') && { target: '_blank', rel: 'noopener noreferrer' })}
                 className="border border-linen/40 text-linen hover:bg-linen hover:text-ink px-8 py-3 text-sm uppercase tracking-widest transition-all duration-300 font-body"
               >
                 {btn.label}
@@ -456,6 +457,7 @@ export default function Home() {
               { label: 'Apple Music', href: 'https://music.apple.com/us/artist/five-year-winter/1781776877' },
               { label: 'Spotify', href: 'https://open.spotify.com/artist/7fQmxwIBDALIrUmP0XJ8qt' },
               { label: 'Tour Dates', href: 'https://www.bandsintown.com/a/7419233?came_from=206' },
+              { label: 'EPK', href: '/epk' },
             ].map((link) => (
               <a
                 key={link.label}
