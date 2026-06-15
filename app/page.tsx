@@ -224,6 +224,96 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Merch */}
+      <section className="relative py-24 px-6 bg-ink overflow-hidden">
+        {/* Faint album art backdrop */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.06]"
+          style={{ backgroundImage: "url('/5YW_website_back.png')" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink via-transparent to-ink" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-transparent to-ink" />
+
+        {/* Pulsing rings */}
+        {[400, 600, 800].map((size, i) => (
+          <motion.div
+            key={size}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-linen/5"
+            animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0, 0.3] }}
+            transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: i * 2.3 }}
+            style={{ width: size, height: size }}
+          />
+        ))}
+
+        <div className="relative z-10 max-w-5xl mx-auto">
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <p className="text-sm uppercase tracking-[0.3em] text-stone/90 mb-4">Merch</p>
+            <h2 className="font-display text-5xl md:text-6xl font-black uppercase tracking-tight text-linen leading-none">
+              Wear the Conviction
+            </h2>
+          </motion.div>
+
+          {/* Product grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12">
+            {[
+              { src: '/merch/tee.png', name: 'A Matter of Conviction Tee' },
+              { src: '/merch/hoodie.png', name: 'Collegiate Hoodie' },
+              { src: '/merch/raglan.png', name: 'Raglan Shirt' },
+              { src: '/merch/hat.png', name: 'Distressed Dad Hat' },
+            ].map((item, i) => (
+              <motion.a
+                key={item.name}
+                href="https://fiveyearwinter.printful.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: i * 0.1 }}
+                whileHover={{ scale: 1.03 }}
+                className="group block"
+              >
+                <div className="overflow-hidden bg-[#0d0c0a] border border-stone/10 group-hover:border-stone/30 transition-colors duration-300">
+                  <img
+                    src={item.src}
+                    alt={item.name}
+                    className="w-full h-auto block"
+                  />
+                </div>
+                <p className="mt-3 text-xs uppercase tracking-widest text-stone/70 group-hover:text-linen transition-colors duration-300 text-center">
+                  {item.name}
+                </p>
+              </motion.a>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-center"
+          >
+            <a
+              href="https://fiveyearwinter.printful.me/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-linen text-ink px-12 py-4 text-sm uppercase tracking-widest font-body transition-all duration-300 hover:bg-white"
+            >
+              Shop All
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Band photo with blindfold scroll effect */}
       <section className="py-24 px-6 bg-[#1a1814]">
         <div className="max-w-3xl mx-auto text-center">
