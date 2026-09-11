@@ -409,6 +409,13 @@ export default function Home() {
                 support: null,
                 tickets: null,
               },
+              {
+                date: 'September 12, 2026',
+                showDate: new Date('2026-09-12'),
+                venue: 'The Boneyard Skatepark — Clarksville, TN',
+                support: 'Alaska on Fire, Villians Over Heroes, Mesifus',
+                tickets: null,
+              },
             ].filter(show => show.showDate >= new Date(new Date().setHours(0, 0, 0, 0))).map((show, i) => (
               <motion.div
                 key={i}
