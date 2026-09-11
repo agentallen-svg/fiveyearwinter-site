@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 export default function EPK() {
@@ -117,7 +118,7 @@ export default function EPK() {
                   <span className="text-stone/50 text-xs">Deftones · Korn · Code Orange · Alice in Chains</span>
                 </p>
                 <p><span className="text-stone/50">Mastered by</span><br />
-                  <span className="text-linen/80">Gene "Machine" Freeman</span><br />
+                  <span className="text-linen/80">Gene &ldquo;Machine&rdquo; Freeman</span><br />
                   <span className="text-stone/50 text-xs">Lamb of God · Every Time I Die · Clutch</span>
                 </p>
               </div>
@@ -335,12 +336,12 @@ export default function EPK() {
       <footer className="py-8 px-8 border-t border-stone/10 bg-ink">
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-display text-sm text-linen/30 tracking-widest uppercase">Five Year Winter</p>
-          <a
+          <Link
             href="/"
             className="text-xs uppercase tracking-widest text-stone/50 hover:text-linen transition-colors duration-300"
           >
             ← Back to site
-          </a>
+          </Link>
         </div>
       </footer>
     </main>
